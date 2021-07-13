@@ -1,0 +1,64 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:rido:sts;1",
+  "@type": "Interface",
+  "displayName": "Simulated Temperature Sensor",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "SendData",
+      "schema": "boolean",
+      "writable": true
+    },
+    {
+      "@type": "Property",
+      "name": "SendInterval",
+      "schema": "integer",
+      "writable": true
+    },
+    {
+      "@type": "Telemetry",
+      "displayName":  "machine",
+      "name": "machine",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "temperature",
+            "schema": "double"
+          },
+          {
+            "name": "humidity",
+            "schema": "double"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Telemetry",
+      "name": "ambient",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "temperature",
+            "schema": "double"
+          },
+          {
+            "name": "pressure",
+            "schema": "double"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Telemetry",
+      "name": "timeCreated",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Command",
+      "name": "reset"
+    }
+  ]
+}

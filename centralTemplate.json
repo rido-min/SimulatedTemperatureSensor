@@ -1,0 +1,91 @@
+[
+    {
+        "@id": "dtmi:edgepnp:EdgeWithSTS;1",
+        "@type": "Interface",
+        "contents": [
+            {
+                "@type": [
+                    "Relationship",
+                    "EdgeModule"
+                ],
+                "maxMultiplicity": 1,
+                "name": "stsrel",
+                "target": [
+                    "dtmi:rido:sts;1"
+                ]
+            }
+        ],
+        "displayName": {
+            "en": "EdgeWithSTS"
+        },
+        "@context": [
+            "dtmi:iotcentral:context;2",
+            "dtmi:dtdl:context;2"
+        ]
+    },
+    {
+        "@context": "dtmi:dtdl:context;2",
+        "@id": "dtmi:rido:sts;1",
+        "@type": "Interface",
+        "displayName": "Simulated Temperature Sensor",
+        "contents": [
+          {
+            "@type": "Property",
+            "name": "SendData",
+            "schema": "boolean",
+            "writable": true
+          },
+          {
+            "@type": "Property",
+            "name": "SendInterval",
+            "schema": "integer",
+            "writable": true
+          },
+          {
+            "@type": "Telemetry",
+            "displayName":  "machine",
+            "name": "machine",
+            "schema": {
+              "@type": "Object",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "schema": "double"
+                },
+                {
+                  "name": "humidity",
+                  "schema": "double"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Telemetry",
+            "name": "ambient",
+            "schema": {
+              "@type": "Object",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "schema": "double"
+                },
+                {
+                  "name": "pressure",
+                  "schema": "double"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Telemetry",
+            "name": "timeCreated",
+            "schema": "dateTime"
+          },
+          {
+            "@type": "Command",
+            "name": "reset"
+          }
+        ]
+      }
+      
+]
